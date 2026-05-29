@@ -1,6 +1,6 @@
 {
     "id": "config-bootstrap",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Config Bootstrap",
     "description": "Clones a configuration repository from GitHub and executes its install.sh script to bootstrap the dev container environment.",
     "options": {
