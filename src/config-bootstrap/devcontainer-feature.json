@@ -16,13 +16,8 @@
         },
         "CONFIG_REPO_DIR": {
             "type": "string",
-            "default": "/tmp/config-repo",
+            "default": "$HOME/config",
             "description": "Local directory to clone the config repository into."
-        },
-        "GITHUB_TOKEN": {
-            "type": "string",
-            "default": "",
-            "description": "GitHub personal access token for cloning private repositories."
         }
     }
 }
