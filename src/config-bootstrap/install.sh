@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+CONFIG_REPO="${CONFIG_REPO:-https://github.com/xzmeng/config}"
+CONFIG_REPO_BRANCH="${CONFIG_REPO_BRANCH:-main}"
+CONFIG_REPO_DIR="${CONFIG_REPO_DIR:-${HOME}/config}"
+REMOTE_USER="${_REMOTE_USER:-root}"
+
 # If running as root and there is a non-root target user, switch to that user
 # and re-execute this script so everything runs as the container's final user.
 if [[ "$(id -u)" = "0" ]] && [[ "${REMOTE_USER}" != "root" ]]; then
     echo "[config-bootstrap] Switching to user: ${REMOTE_USER}"
     exec su - "${REMOTE_USER}" -c "bash '$0'"
 fi
-
-CONFIG_REPO="${CONFIG_REPO:-https://github.com/xzmeng/config}"
-CONFIG_REPO_BRANCH="${CONFIG_REPO_BRANCH:-main}"
-CONFIG_REPO_DIR="${CONFIG_REPO_DIR:-${HOME}/config}"
-REMOTE_USER="${_REMOTE_USER:-root}"
 
 if [[ -n "${DEBUG:-}" ]]; then
     set -x
