@@ -1,0 +1,28 @@
+{
+    "id": "config-bootstrap",
+    "version": "1.0.0",
+    "name": "Config Bootstrap",
+    "description": "Clones a configuration repository from GitHub and executes its install.sh script to bootstrap the dev container environment.",
+    "options": {
+        "CONFIG_REPO": {
+            "type": "string",
+            "default": "https://github.com/xzmeng/config",
+            "description": "GitHub repository URL to clone (e.g., https://github.com/user/my-config-repo.git). Required."
+        },
+        "CONFIG_REPO_BRANCH": {
+            "type": "string",
+            "default": "main",
+            "description": "Branch or tag to checkout from the config repository."
+        },
+        "CONFIG_REPO_DIR": {
+            "type": "string",
+            "default": "/tmp/config-repo",
+            "description": "Local directory to clone the config repository into."
+        },
+        "GITHUB_TOKEN": {
+            "type": "string",
+            "default": "",
+            "description": "GitHub personal access token for cloning private repositories."
+        }
+    }
+}
