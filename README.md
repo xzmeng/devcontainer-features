@@ -21,7 +21,7 @@ Or via GHCR (after CI publishes):
   "features": {
     "ghcr.io/xzmeng/config-bootstrap:1": {}
   }
-}
+}`
 ```
 
 ## Options
