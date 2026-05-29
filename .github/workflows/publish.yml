@@ -1,4 +1,4 @@
-name: "Publish features"
+name: "Validate and Publish"
 
 on:
   push:
@@ -12,13 +12,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Validate features"
+        uses: devcontainers/action@v1
+        with:
+          publish-features: "false"
+          base-path-to-features: "./src"
+
   deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       packages: write
     steps:
       - uses: actions/checkout@v4
-
       - name: "Publish features"
         uses: devcontainers/action@v1
         with:
