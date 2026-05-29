@@ -1,6 +1,6 @@
 {
     "id": "config-bootstrap",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "name": "Config Bootstrap",
     "description": "Clones a configuration repository from GitHub and executes its install.sh script to bootstrap the dev container environment.",
     "options": {
@@ -16,7 +16,7 @@
         },
         "CONFIG_REPO_DIR": {
             "type": "string",
-            "default": "$HOME/config",
+            "default": "",
             "description": "Local directory to clone the config repository into."
         }
     }

@@ -3,8 +3,9 @@ set -euo pipefail
 
 CONFIG_REPO="${CONFIG_REPO:-https://github.com/xzmeng/config}"
 CONFIG_REPO_BRANCH="${CONFIG_REPO_BRANCH:-main}"
-CONFIG_REPO_DIR="${CONFIG_REPO_DIR:-${HOME}/config}"
 REMOTE_USER="${_REMOTE_USER:-root}"
+CONFIG_REPO_DIR="${CONFIG_REPO_DIR:-/home/${_REMOTE_USER}/config}"
+
 
 # If running as root and there is a non-root target user, switch to that user
 # and re-execute this script so everything runs as the container's final user.
